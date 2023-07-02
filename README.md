@@ -1,5 +1,9 @@
 # Kanban-webapp
 
+Check it out [here!](https://mikolaj-mroz.github.io/note-webapp/)
+
+! It's not optimized for mobile view !
+
 Frontend made using Vue3 + Vite + Vuetify inspired by Kanban Board.
 
 ![Screenshot](Example.png)
