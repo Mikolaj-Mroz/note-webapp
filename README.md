@@ -3,9 +3,13 @@
 Check it out [here!](https://mikolaj-mroz.github.io/note-webapp/)
 
 
-Frontend made using Vue3 + Vite + Vuetify inspired by Kanban Board.
+Fully responsive Frontend project made using Vue3 + Vite + Vuetify inspired by Kanban Board.
 
-![Screenshot](Example.png)
+![Web screenshot](Example.png)
+Web version
+
+![Mobile screenshot](mobile.jpg)
+Mobile fully responsive version
 
 ## Build Setup
 
