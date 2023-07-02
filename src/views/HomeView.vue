@@ -20,7 +20,7 @@
         </v-sheet>
         <v-row no-gutters class="px-1 py-2">
           <v-col class="px-1" cols="4" v-for="tab in tabs" :key="tab.id">
-            <v-sheet class="bg-white" :elevation="1" rounded="lg" style="min-height: 70vh">
+            <v-sheet class="bg-white" :elevation="1" rounded="lg" style="min-height: 70vh; height:100%">
               <v-row no-gutters>
                 <v-col cols="1">
                   <v-icon icon="mdi-menu" class="label-btn"></v-icon>
