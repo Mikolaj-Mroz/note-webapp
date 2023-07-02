@@ -152,7 +152,6 @@ const tabs = ref([
 ])
 
 const createNote = (id) => {
-  console.log(tabs.value)
   if (tabs.value[id].form.title) {
     tabs.value[id].notes.push({
       id: Date.now(),
@@ -169,7 +168,6 @@ const createNote = (id) => {
 }
 
 const deleteNote = (tabId, noteId) => {
-  console.log(tabId, noteId)
   tabs.value[tabId].notes = tabs.value[tabId].notes.filter((note) => note.id !== noteId)
 }
 </script>
