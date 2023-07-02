@@ -31,7 +31,7 @@
                   </h2>
                 </v-col>
                 <v-col cols="2" class="text-right">
-                  <v-btn icon flat @click="tab.create = !tab.create" class="label-btn">
+                  <v-btn icon flat @click.prevent="tab.create = !tab.create" class="label-btn">
                     <v-icon icon="mdi-plus"></v-icon>
                   </v-btn>
                 </v-col>
@@ -40,7 +40,9 @@
               <v-expand-transition>
                 <div v-if="tab.create">
                   <!--- helps make animation smoother -->
-                  <v-form class="pa-2 inner-shadow">
+                  <v-form class="pa-2 inner-shadow"
+                    @submit.prevent="createNote(tab.id)"  
+                  >
                     <v-text-field v-model="tab.form.title" label="Title" required></v-text-field>
                     <v-textarea v-model="tab.form.content" label="Content" required></v-textarea>
                     <v-radio-group inline v-model="tab.form.importance">
@@ -57,7 +59,7 @@
                 <template #item="{ element }">
                   <div>
                     <v-sheet
-                      @click="element.openContent = !element.openContent"
+                      @click.prevent="element.openContent = !element.openContent"
                       :color="element.color"
                       class="ma-1 pa-2 drag-object"
                       :rounded="element.openContent && element.content ? 't-lg' : 'lg'"
@@ -73,7 +75,8 @@
                           <v-dialog v-model="element.deleteDialog" width="auto">
                             <template v-slot:activator="{ props }">
                               <v-btn
-                                @click="element.deleteDialog = !element.deleteDialog"
+                                @click.prevent="element.deleteDialog = !element.deleteDialog"
+                                @keyup.enter="deleteNote(tab.id, element.id)"
                                 class="note-btn"
                                 flat
                                 icon
@@ -87,7 +90,7 @@
                                 <p>Are you sure you want to delete this note?</p>
                               </v-card-text>
                               <v-card-actions>
-                                <v-btn @click="deleteNote(tab.id, element.id)" block>
+                                <v-btn @click.prevent="deleteNote(tab.id, element.id)" block>
                                   Delete
                                 </v-btn>
                               </v-card-actions>
