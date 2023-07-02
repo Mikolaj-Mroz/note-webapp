@@ -1,35 +1,26 @@
-# note-webapp
+# Kanban-webapp
 
-This template should help get you started developing with Vue 3 in Vite.
+Frontend made using Vue3 + Vite + Vuetify inspired by Kanban Board.
 
-## Recommended IDE Setup
+![Screenshot](Example.png)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Build Setup
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+``` bash
+# install dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# serve with hot reload at localhost:8080
 npm run dev
-```
 
-### Compile and Minify for Production
-
-```sh
+# build for production with minification
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Tech
 
-```sh
-npm run lint
-```
+* Vue3
+* Vite
+* Vuetify
+* Vuedraggable
+* Material Design Icons
