@@ -1,10 +1,10 @@
 <template>
-  <v-row no-gutters class="ma-2 mt-12">
+  <v-row no-gutters class="ma-0 ma-md-2 mt-0 mt-md-12">
     <v-col cols="12" md="10" offset-md="1">
       <v-sheet class="bg-grey-lighten-4" rounded="lg" :elevation="24">
-        <v-sheet class="bg-black" rounded="t-lg">
+        <v-sheet class="bg-black" :rounded="isMobile ? '0' : 't-lg'">
           <v-row no-gutters>
-            <v-col cols="8" class="px-4 py-2">
+            <v-col cols="8" class="px-2 px-md-4 py-2">
               <h1 class="text-h4 font-weight-bold">KANBAN BOARD ONLINE</h1>
             </v-col>
             <v-spacer></v-spacer>
@@ -19,13 +19,17 @@
           </v-row>
         </v-sheet>
         <v-row no-gutters class="px-1 py-2">
-          <v-col class="px-1" cols="4" v-for="tab in tabs" :key="tab.id">
-            <v-sheet class="bg-white" :elevation="1" rounded="lg" style="min-height: 70vh; height:100%">
+          <v-col class="px-1 py-2 py-md-0" cols="12" md="4" v-for="tab in tabs" :key="tab.id">
+            <v-sheet
+              :class="'bg-white ' + (isMobile ? 'mobile-panel' : 'web-panel')"
+              :elevation="1"
+              rounded="lg"
+            >
               <v-row no-gutters>
-                <v-col cols="1">
+                <v-col cols="2" md="1">
                   <v-icon icon="mdi-menu" class="label-btn"></v-icon>
                 </v-col>
-                <v-col cols="9" class="pl-1">
+                <v-col cols="8" class="pl-1">
                   <h2 class="text-body-h6 font-weight-bold" style="line-height: 40px">
                     {{ tab.name }}
                   </h2>
@@ -40,9 +44,7 @@
               <v-expand-transition>
                 <div v-if="tab.create">
                   <!--- helps make animation smoother -->
-                  <v-form class="pa-2 inner-shadow"
-                    @submit.prevent="createNote(tab.id)"  
-                  >
+                  <v-form class="pa-2 inner-shadow" @submit.prevent="createNote(tab.id)">
                     <v-text-field v-model="tab.form.title" label="Title" required></v-text-field>
                     <v-textarea v-model="tab.form.content" label="Content" required></v-textarea>
                     <v-radio-group inline v-model="tab.form.importance">
@@ -126,6 +128,9 @@
 <script setup>
 import { ref } from 'vue'
 import draggable from 'vuedraggable'
+import { useDisplay } from 'vuetify'
+
+const isMobile = useDisplay().mobile.value
 
 const tabs = ref([
   {
@@ -173,6 +178,16 @@ const deleteNote = (tabId, noteId) => {
 </script>
 
 <style scoped>
+.web-panel {
+  min-height: 70vh;
+  height: 100%;
+}
+
+.mobile-panel {
+  min-height: 30vh;
+  height: 100%;
+}
+
 .rotate {
   rotate: 180deg;
   transition: rotate 1s;
