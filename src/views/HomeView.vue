@@ -5,7 +5,7 @@
         <v-sheet class="bg-black" rounded="t-lg">
           <v-row no-gutters>
             <v-col cols="8" class="px-4 py-2">
-              <h1 class="text-h4 font-weight-bold">Kanban Board Online</h1>
+              <h1 class="text-h4 font-weight-bold">KANBAN BOARD ONLINE</h1>
             </v-col>
             <v-spacer></v-spacer>
             <v-col class="py-1 px-1 text-right">
@@ -103,12 +103,12 @@
                       <div v-if="element.openContent && element.content">
                         <!--- helps make animation smoother -->
                         <v-sheet
-                          class="px-1 pt-2 mx-1 inner-shadow"
+                          class="px-2 pt-2 mx-1 inner-shadow"
                           rounded="b-lg"
                           :color="element.color"
                           style="min-height: 64px"
                         >
-                          <p class="text-body-2">{{ element.content }}</p>
+                          <p class="text-body-2 text-justify">{{ element.content }}</p>
                         </v-sheet>
                       </div>
                     </v-expand-transition>
