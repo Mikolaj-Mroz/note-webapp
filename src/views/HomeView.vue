@@ -4,8 +4,8 @@
       <v-sheet class="bg-grey-lighten-4" rounded="lg" :elevation="24">
         <v-sheet class="bg-black" :rounded="isMobile ? '0' : 't-lg'">
           <v-row no-gutters>
-            <v-col cols="8" class="px-2 px-md-4 py-2">
-              <h1 class="text-h4 font-weight-bold">KANBAN BOARD ONLINE</h1>
+            <v-col cols="8" class="px-2 px-md-4 py-4 py-md-2">
+              <h1 class="text-body-1 text-md-h4 font-weight-bold">KANBAN BOARD ONLINE</h1>
             </v-col>
             <v-spacer></v-spacer>
             <v-col class="py-1 px-1 text-right">
@@ -87,9 +87,9 @@
                                 <v-icon icon="mdi-close" color="white" size="x-small"></v-icon>
                               </v-btn>
                             </template>
-                            <v-card style="width: 30vw" class="text-center">
+                            <v-card class="text-center">
                               <v-card-text>
-                                <p>Are you sure you want to delete this note?</p>
+                                <p class="text-body-1">Are you sure you want to delete this note?</p>
                               </v-card-text>
                               <v-card-actions>
                                 <v-btn @click.prevent="deleteNote(tab.id, element.id)" block>
