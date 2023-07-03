@@ -31,3 +31,7 @@ npm run build
 * Vuetify
 * Vuedraggable
 * Material Design Icons
+
+## Conclusion
+
+I should've used Pinia for this project.
