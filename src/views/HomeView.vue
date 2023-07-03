@@ -29,12 +29,12 @@
                 <v-col cols="2" md="1">
                   <v-icon icon="mdi-menu" class="label-btn"></v-icon>
                 </v-col>
-                <v-col cols="8" class="pl-1">
+                <v-col cols="8" md="10" class="pl-1">
                   <h2 class="text-body-h6 font-weight-bold" style="line-height: 40px">
                     {{ tab.name }}
                   </h2>
                 </v-col>
-                <v-col cols="2" class="text-right">
+                <v-col cols="2" md="1" class="text-right">
                   <v-btn icon flat @click.prevent="tab.create = !tab.create" class="label-btn">
                     <v-icon icon="mdi-plus"></v-icon>
                   </v-btn>
